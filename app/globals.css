@@ -1,0 +1,816 @@
+/* ============================================================
+   RAG Doctor — Next-Gen Cyber-Medical Design System
+   High-Voltage Animated Futuristic HUD
+   NVIDIA Neon Matrix x Nebius Deep Violet x Quantum Cyan
+   ============================================================ */
+
+/* 1. Core Variables & Multi-Theme System */
+:root,
+[data-theme="nvidia"] {
+  --bg-primary: #040810;
+  --bg-secondary: #08101e;
+  --bg-tertiary: #0e1b30;
+  --bg-card: rgba(11, 20, 36, 0.76);
+  --bg-card-hover: rgba(16, 29, 52, 0.9);
+  --bg-glass: rgba(8, 16, 30, 0.7);
+
+  --accent-primary: #00ff87;
+  --accent-secondary: #76b900;
+  --accent-tertiary: #00f2fe;
+  --accent-glow: rgba(0, 255, 135, 0.35);
+  --accent-glow-strong: rgba(0, 255, 135, 0.7);
+  --border-accent: rgba(0, 255, 135, 0.35);
+
+  --nvidia-green: #00ff87;
+  --nvidia-bright: #76b900;
+  --nebius-violet: #a855f7;
+  --nebius-bright: #c084fc;
+  --cyber-cyan: #00f2fe;
+
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-subtle: #64748b;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-highlight: rgba(0, 255, 135, 0.3);
+
+  --status-emerald: #10b981;
+  --status-amber: #f59e0b;
+  --status-rose: #f43f5e;
+  --status-blue: #38bdf8;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+}
+
+[data-theme="nebius"] {
+  --bg-primary: #070412;
+  --bg-secondary: #100824;
+  --bg-tertiary: #190d38;
+  --bg-card: rgba(18, 10, 38, 0.76);
+  --bg-card-hover: rgba(28, 15, 56, 0.9);
+  --bg-glass: rgba(14, 8, 30, 0.7);
+
+  --accent-primary: #c084fc;
+  --accent-secondary: #8a3ffc;
+  --accent-tertiary: #ec4899;
+  --accent-glow: rgba(192, 132, 252, 0.4);
+  --accent-glow-strong: rgba(138, 63, 252, 0.75);
+  --border-accent: rgba(192, 132, 252, 0.4);
+
+  --nvidia-green: #c084fc;
+  --nvidia-bright: #e879f9;
+  --nebius-violet: #8a3ffc;
+  --nebius-bright: #c084fc;
+  --cyber-cyan: #f43f5e;
+
+  --border-highlight: rgba(192, 132, 252, 0.35);
+}
+
+[data-theme="cyan"] {
+  --bg-primary: #020b16;
+  --bg-secondary: #05162a;
+  --bg-tertiary: #0a2442;
+  --bg-card: rgba(6, 24, 46, 0.76);
+  --bg-card-hover: rgba(10, 36, 68, 0.9);
+  --bg-glass: rgba(4, 18, 36, 0.7);
+
+  --accent-primary: #00f2fe;
+  --accent-secondary: #38bdf8;
+  --accent-tertiary: #00ff87;
+  --accent-glow: rgba(0, 242, 254, 0.4);
+  --accent-glow-strong: rgba(0, 242, 254, 0.75);
+  --border-accent: rgba(0, 242, 254, 0.4);
+
+  --nvidia-green: #00f2fe;
+  --nvidia-bright: #38bdf8;
+  --nebius-violet: #00f2fe;
+  --nebius-bright: #7dd3fc;
+  --cyber-cyan: #00ff87;
+
+  --border-highlight: rgba(0, 242, 254, 0.35);
+}
+
+/* 2. Global Reset & Edge-to-Edge Canvas */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden !important;
+  position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Completely hidden scrollbars */
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+*::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 0px !important;
+  height: 0px !important;
+  display: none !important;
+}
+
+/* 3. Cyber Matrix Grid & Laser Scanline Background */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  z-index: -3;
+}
+
+/* Moving Cyber Scanline Beam */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 180px;
+  background: linear-gradient(180deg, transparent 0%, var(--accent-glow) 85%, transparent 100%);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: -2;
+  animation: cyberScan 10s infinite linear;
+}
+
+@keyframes cyberScan {
+  0% { transform: translateY(-180px); }
+  100% { transform: translateY(105vh); }
+}
+
+/* Ambient Moving Aurora Orbs */
+.ambient-aurora-1 {
+  position: fixed;
+  top: -15%;
+  left: -10%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: -4;
+  animation: auraFloatA 20s infinite alternate ease-in-out;
+}
+
+.ambient-aurora-2 {
+  position: fixed;
+  bottom: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.16) 0%, rgba(0, 242, 254, 0.08) 50%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: -4;
+  animation: auraFloatB 24s infinite alternate ease-in-out;
+}
+
+@keyframes auraFloatA {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(12vw, 12vh) scale(1.15); }
+  100% { transform: translate(-4vw, 18vh) scale(0.95); }
+}
+
+@keyframes auraFloatB {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-10vw, -12vh) scale(1.1); }
+  100% { transform: translate(6vw, -8vh) scale(1.05); }
+}
+
+/* 4. Glassmorphism Panels & Futuristic Cards */
+.glass-panel {
+  background: var(--bg-card);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 12px 36px -12px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.04);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.28s ease, 
+              box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.28s ease;
+  position: relative;
+}
+
+.glass-panel:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-accent);
+  box-shadow: 0 20px 48px -15px rgba(0, 0, 0, 0.75), 0 0 24px var(--accent-glow);
+}
+
+/* Rotating Animated Neon Gradient Border */
+.neon-border-card {
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  padding: 2px; /* border thickness */
+  box-shadow: 0 0 35px var(--accent-glow);
+}
+
+.neon-border-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    var(--accent-primary) 30%,
+    var(--accent-tertiary) 60%,
+    transparent 85%
+  );
+  animation: neonBorderRotate 4.5s linear infinite;
+  pointer-events: none;
+}
+
+.neon-border-inner {
+  position: relative;
+  background: var(--bg-secondary);
+  border-radius: calc(var(--radius-xl) - 2px);
+  z-index: 1;
+}
+
+@keyframes neonBorderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 5. Medical ECG Cardiac Waveform Animations */
+.ecg-monitor-box {
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(0, 255, 135, 0.25);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ecg-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 135, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 135, 0.08) 1px, transparent 1px);
+  background-size: 14px 14px;
+  pointer-events: none;
+}
+
+.ecg-svg-wave {
+  width: 100%;
+  height: 38px;
+  display: block;
+}
+
+.ecg-path {
+  stroke: var(--accent-primary);
+  stroke-width: 2.2;
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: ecgStroke 2.6s linear infinite;
+  filter: drop-shadow(0 0 6px var(--accent-primary));
+}
+
+@keyframes ecgStroke {
+  0% { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* Soundwave Audio Bars (for Playground / Medical Vital Pulse) */
+.soundwave-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 22px;
+}
+
+.soundwave-bar {
+  width: 3.5px;
+  background: var(--accent-primary);
+  border-radius: 9999px;
+  animation: soundwaveBounce 1.2s ease-in-out infinite alternate;
+}
+
+.soundwave-bar:nth-child(1) { height: 30%; animation-delay: 0.1s; }
+.soundwave-bar:nth-child(2) { height: 80%; animation-delay: 0.3s; }
+.soundwave-bar:nth-child(3) { height: 45%; animation-delay: 0.15s; }
+.soundwave-bar:nth-child(4) { height: 100%; animation-delay: 0.4s; }
+.soundwave-bar:nth-child(5) { height: 60%; animation-delay: 0.25s; }
+.soundwave-bar:nth-child(6) { height: 90%; animation-delay: 0.35s; }
+.soundwave-bar:nth-child(7) { height: 40%; animation-delay: 0.2s; }
+
+@keyframes soundwaveBounce {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+/* 6. Health Gauge Triple Pulsing Radar Rings */
+.gauge-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-pulse-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-primary);
+  opacity: 0;
+  animation: gaugePulse 3s infinite cubic-bezier(0.2, 0.8, 0.4, 1);
+  pointer-events: none;
+}
+
+.gauge-pulse-ring:nth-child(1) { width: 140px; height: 140px; animation-delay: 0s; }
+.gauge-pulse-ring:nth-child(2) { width: 170px; height: 170px; animation-delay: 0.9s; }
+.gauge-pulse-ring:nth-child(3) { width: 200px; height: 200px; animation-delay: 1.8s; }
+
+@keyframes gaugePulse {
+  0% { transform: scale(0.85); opacity: 0.8; }
+  50% { opacity: 0.35; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+/* 7. Typography & Gradients */
+h1, h2, h3, h4, .display-font {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.gradient-title {
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent-primary) 65%, var(--accent-tertiary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-nvidia {
+  background: linear-gradient(135deg, #a3e635 0%, #00ff87 50%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.gradient-text-nebius {
+  background: linear-gradient(135deg, #e879f9 0%, #a855f7 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* 8. Buttons & Interactive Controls */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: none;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  color: #040810;
+  box-shadow: 0 4px 20px var(--accent-glow);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 30px var(--accent-glow-strong);
+  transform: translateY(-2px);
+}
+
+.btn-laser-cta {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #00c6ff 100%);
+  color: #040810;
+  font-weight: 800;
+  box-shadow: 0 0 24px var(--accent-glow), inset 0 0 10px rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+.btn-laser-cta:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 35px var(--accent-glow-strong);
+}
+
+.btn-violet {
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+}
+
+.btn-violet:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 6px 28px rgba(168, 85, 247, 0.65);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* 9. Badges & Micro-Telemetry */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 9999px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.badge:hover {
+  transform: scale(1.05);
+}
+
+.badge-nvidia {
+  background: rgba(0, 255, 135, 0.14);
+  color: var(--accent-primary);
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.badge-nebius {
+  background: rgba(168, 85, 247, 0.16);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+}
+
+.badge-emerald {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.badge-rose {
+  background: rgba(244, 63, 94, 0.16);
+  color: #fb7185;
+  border: 1px solid rgba(244, 63, 94, 0.4);
+}
+
+.badge-cyan {
+  background: rgba(0, 242, 254, 0.16);
+  color: #38bdf8;
+  border: 1px solid rgba(0, 242, 254, 0.4);
+}
+
+/* 10. Layout Containers & Navigation Tabs */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 16px 36px;
+}
+
+.nav-tab-list {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  background: rgba(8, 14, 26, 0.88);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-tab-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.nav-tab-button:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-1px);
+}
+
+.nav-tab-button.active {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(0, 255, 135, 0.22) 0%, rgba(168, 85, 247, 0.22) 100%);
+  border: 1px solid var(--accent-primary);
+  box-shadow: 0 4px 18px var(--accent-glow);
+}
+
+/* Tab Switching Animation */
+.tab-content-enter {
+  animation: tabFadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.99);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 11. Live Agent Telemetry Terminal Stream */
+.telemetry-ticker {
+  background: #02050b;
+  border: 1px solid rgba(0, 255, 135, 0.3);
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(0, 255, 135, 0.05);
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--accent-primary);
+  animation: blinkCursor 0.9s infinite step-start;
+  vertical-align: middle;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 12. Laser Progress Bar */
+.laser-progress-bar {
+  position: relative;
+  overflow: hidden;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.laser-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-tertiary) 50%, var(--nebius-violet) 100%);
+  background-size: 200% 100%;
+  animation: laserMove 1.8s infinite linear;
+  box-shadow: 0 0 14px var(--accent-primary);
+}
+
+@keyframes laserMove {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+/* 13. Radar Blip for Live Telemetry */
+.radar-blip {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  position: relative;
+}
+
+.radar-blip::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  opacity: 0.6;
+  animation: radarWave 2s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes radarWave {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* 14. Document Inspector Slide-Out Drawer / Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 12, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 900px;
+  max-height: 88vh;
+  background: #090f1d;
+  border: 1px solid var(--accent-primary);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.85), 0 0 35px var(--accent-glow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalZoomIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes modalZoomIn {
+  0% { transform: scale(0.92) translateY(20px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.doc-viewer-code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.65;
+  color: #e2e8f0;
+  background: #040812;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  overflow-y: auto;
+  max-height: 55vh;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* 15. Side-by-Side Diff Visualizer */
+.diff-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+
+.diff-box-red {
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.35);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+
+.diff-box-green {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: var(--radius-md);
+  padding: 14px;
+}
+
+/* 16. Theme Switcher Pills */
+.theme-switcher-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 9999px;
+  padding: 3px;
+  gap: 3px;
+}
+
+.theme-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-pill-btn:hover {
+  color: #fff;
+}
+
+.theme-pill-btn.active {
+  background: var(--accent-primary);
+  color: #040810;
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* 17. Grids */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 1024px) {
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3, .diff-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_note": "This file is the ground-truth audit key for the Nova Retail demo corpus. It is NOT part of the retrieval corpus — keep it out of data/demo_company/ so the RAG bot never sees it.",
+  "contradictions": [
+    {
+      "id": "C1",
+      "topic": "Refund / return window duration",
+      "doc_a": "data/demo_company/refund_policy.md",
+      "line_a": "Customers may return eligible items within **30 days** of the delivery date for a full refund to the original payment method.",
+      "doc_b": "data/demo_company/faq.md",
+      "line_b": "Our return window is **14 days** from the date of delivery.",
+      "note": "refund_policy.md (the dedicated policy doc) says 30 days; faq.md says 14 days. A customer reading the FAQ would get the wrong information."
+    },
+    {
+      "id": "C2",
+      "topic": "Standard shipping transit time",
+      "doc_a": "data/demo_company/shipping.md",
+      "line_a": "Standard Shipping: **3–5 business days**",
+      "doc_b": "data/demo_company/checkout_guide.md",
+      "line_b": "Standard shipping typically takes **5–7 business days** from the dispatch date.",
+      "note": "shipping.md (the authoritative shipping policy) says 3-5 days; checkout_guide.md says 5-7 days. A customer reading checkout_guide.md expects a longer wait."
+    },
+    {
+      "id": "C3",
+      "topic": "Annual leave entitlement for full-time employees",
+      "doc_a": "data/demo_company/hr_leave.md",
+      "line_a": "Full-time employees accrue **15 days** of annual leave per calendar year, earned at a rate of **1.25 days per month**.",
+      "doc_b": "data/demo_company/employee_handbook.md",
+      "line_b": "All full-time staff are entitled to **20 days** of paid annual leave per year, accruing at **1.67 days per month**.",
+      "note": "hr_leave.md (the dedicated leave policy) says 15 days at 1.25/month; employee_handbook.md says 20 days at 1.67/month. A 5-day discrepancy with matching accrual rates that are individually consistent but disagree with each other."
+    },
+    {
+      "id": "C4",
+      "topic": "Standard warranty duration on Nova-branded products",
+      "doc_a": "data/demo_company/warranty.md",
+      "line_a": "Nova Retail provides a **1-year** limited warranty on all Nova-branded products, covering defects in materials and workmanship under normal use and service conditions.",
+      "doc_b": "data/demo_company/product_catalog.md",
+      "line_b": "Every Nova-branded product comes with a **2-year** manufacturer's warranty as standard.",
+      "note": "warranty.md (the dedicated warranty policy) says 1 year; product_catalog.md says 2 years for every listed SKU."
+    }
+  ],
+  "gaps": [
+    {
+      "id": "G1",
+      "topic": "International return shipping costs",
+      "absent_from": "all documents",
+      "note": "shipping.md explicitly covers domestic return shipping (prepaid label, free) but only says 'This section covers domestic (US) return shipping only.' No document anywhere states who pays for return shipping on international orders, what the process is, or whether prepaid labels are provided."
+    },
+    {
+      "id": "G2",
+      "topic": "Gift card expiry / validity period",
+      "absent_from": "all documents",
+      "note": "Gift cards are mentioned in loyalty_program.md, payment_methods.md, checkout_guide.md, and store_locations.md — covering purchase, usage, stacking, replacement, and that they cannot be exchanged for cash. However, no document states whether gift cards expire, and if so after how long."
+    },
+    {
+      "id": "G3",
+      "topic": "Price-match policy",
+      "absent_from": "all documents",
+      "note": "pricing.md, promotions.md, faq.md, and checkout_guide.md cover discounts, promo codes, volume pricing, and sale events extensively. No document mentions whether Nova Retail offers price matching against competitors or its own historical prices."
+    }
+  ]
+}
