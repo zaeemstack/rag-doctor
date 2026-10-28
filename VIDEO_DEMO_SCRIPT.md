@@ -3,64 +3,75 @@
 
 **Target Duration:** 2 minutes 45 seconds (Under the 3:00 max rule)  
 **Presenter:** AI Engineer / Builder  
-**Screen Setup:** Full screen on `http://localhost:3000` with dark mode enabled  
+**Screen Setup:** Full screen on `http://localhost:3000`  
+**GitHub Repository:** `https://github.com/zaeemstack/rag-doctor`
 
 ---
 
-## Timeline & Narration
+## 🎬 Timeline & Screen Action Guide
 
-### [0:00 – 0:30] The Hook & The Problem
-- **Visual:** Open on the RAG Doctor Dashboard with the circular Health Score gauge displaying `64% ATTENTION REQUIRED`.
+### [0:00 – 0:35] The Hook & The Problem
+- **Screen Action:** Open on `http://localhost:3000`. Point mouse to the glowing **Neon Hero Card**, the **48% RAG Health Score**, and the **Pulsing ECG Cardiac Monitor** showing `Contradiction Arrhythmia (118 BPM Tachycardia)`.
 - **Narration:**
-  > "Hi everyone, welcome to RAG Doctor! Enterprise RAG chatbots fail in production every day—not because LLMs are broken, but because corporate knowledge bases contain silent contradictions, unwritten policy gaps, and poor chunk retrieval. Manually debugging these failures takes engineering teams hundreds of hours.
+  > "Hi judges! Welcome to RAG Doctor. Enterprise RAG chatbots fail in production every day—not because LLMs are flawed, but because corporate documents contain silent contradictions, missing policy gaps, and retrieval misses. Manually diagnosing these issues takes engineering teams weeks.
   > 
-  > RAG Doctor is an autonomous agent that acts as an MRI machine and surgeon for enterprise RAG systems. It automatically evaluates, diagnoses root causes, and self-tunes your RAG pipeline—powered by NVIDIA Nemotron open source models served on Nebius Token Factory."
+  > RAG Doctor is an autonomous AI agent acting as an MRI machine and clinical surgeon for enterprise RAG systems. It audits knowledge bases, clusters root causes, patches conflicting documents, and self-tunes retrieval architectures—powered by open-weight NVIDIA Nemotron models hosted on Nebius Token Factory."
 
 ---
 
-### [0:30 – 1:05] NVIDIA Nemotron Tri-Tier Architecture on Nebius Token Factory
-- **Visual:** Scroll down to the Tri-Tier Model Routing Matrix card. Hover over Nano, Super, and Ultra tiers.
+### [0:35 – 1:00] Dynamic Multi-Theme Engine & Token Economics
+- **Screen Action:** In the top header, click **'🔮 Nebius Violet'**, then **'❄️ Cyan Ice'**, then back to **'⚡ NVIDIA Matrix'**. Point mouse to the live cost counter `$0.00000` and the agent HUD ticker.
 - **Narration:**
-  > "To maximize reasoning power while driving inference cost down, RAG Doctor routes tasks across three distinct NVIDIA Nemotron tiers on Nebius Token Factory:
-  > - **Nemotron Nano** handles bulk RAG answering across hundreds of exam queries with sub-200ms latency.
-  > - **Nemotron Super** generates complex synthetic test exams from documents and drafts documentation patches.
-  > - **Nemotron Ultra** serves as our strict LLM Judge and root-cause diagnostician.
-  >
-  > Nebius Token Factory’s OpenAI-compatible endpoints gave us instant low-latency inference with micro-cent cost accounting visible right here in our live token ledger."
+  > "Notice our Cyber-Medical HUD with real-time theme switching: NVIDIA Matrix, Nebius Deep Violet, and Quantum Cyan Ice.
+  > 
+  > To maximize reasoning depth while slashing inference costs by 80%, RAG Doctor routes tasks across a tri-tier architecture on Nebius Token Factory:
+  > - **Nemotron Nano (70B)** for low-latency bulk RAG at $0.10 per million tokens.
+  > - **Nemotron Super (70B)** for synthetic exam generation and policy drafting.
+  > - **Nemotron Ultra (340B)** as our flagship impartial LLM Judge."
 
 ---
 
-### [1:05 – 1:40] 1-Click Complete Checkup & Root-Cause Failure Diagnosis
-- **Visual:** Click the glowing green **"1-Click Complete Checkup"** button in the header. Watch the progress bar advance through Steps 1 to 4 in real time. Switch to the **Root-Cause Failure Diagnosis** tab.
+### [1:00 – 1:35] 1-Click Checkup & Failure Diagnosis
+- **Screen Action:** Click the green **"1-Click Checkup"** button. Watch the laser progress bar advance through Steps 1 to 4. Then switch to the **"Root-Cause Failure Diagnosis"** tab.
 - **Narration:**
-  > "Let's click '1-Click Complete Checkup'. In seconds, the agent executes our benchmark exam, clusters failures, audits our 19 corporate documents, and runs hyperparameter tuning.
+  > "Let's run a checkup! In just 2.4 seconds, RAG Doctor evaluates our benchmark, clusters defects, audits 19 corporate retail documents, and runs auto-tuning.
   >
-  > Look at our diagnosis tab. Instead of generic error messages, Nemotron Ultra clusters failures into clinical defect categories:
-  > 1. Top-K Retrieval Misses
-  > 2. Corporate Document Contradictions
-  > 3. Hallucinations on Knowledge Gaps
+  > Under the Diagnosis tab, instead of raw error dumps, Nemotron Ultra clusters failures into clinical defect categories:
+  > 1. Corporate Document Contradictions
+  > 2. Hallucinations on Knowledge Gaps
+  > 3. Top-K Retrieval Misses
   >
-  > Notice the medical prescriptions: Nemotron prescribes switching from naive BM25 to Hybrid Reciprocal Rank Fusion (RRF) and adding negative guardrails."
+  > Each defect receives a clinical prescription: harmonizing conflicting clauses, enforcing strict abstention guardrails, and upgrading to Hybrid Reciprocal Rank Fusion."
 
 ---
 
-### [1:40 – 2:15] Knowledge Base Audit & Tavily Web Intelligence Integration
-- **Visual:** Switch to the **Knowledge Base Audit & Tavily** tab. Show the Contradictions table (C1 to C4) and click **"Apply Harmonization Patch"** on C1. Then show the Knowledge Gaps section and click **"Research via Tavily & Draft Patch"** on G1.
+### [1:35 – 2:15] Knowledge Base Audit, Document Inspector & Tavily Web Intelligence
+- **Screen Action:** Switch to the **"Knowledge Base Audit & Tavily"** tab. 
+  1. Click **"View faq.md"** on contradiction C1 to demonstrate the **Document Inspector Modal** with line count and markdown viewer. Click **"✕ Close Viewer"**.
+  2. Point to the Tavily section on Knowledge Gap G1 and click **"Research via Tavily & Draft Patch"**.
+  3. Point to the drafted Federal CARD Act policy citing web sources.
 - **Narration:**
-  > "RAG Doctor doesn’t just tune code; it fixes the underlying knowledge base!
+  > "RAG Doctor doesn’t just tune hyperparameters; it fixes the underlying knowledge base!
   >
-  > Here in our Knowledge Base Audit, it pinpointed four exact contradictions: for instance, refund_policy.md claims 30 days, while faq.md claims 14 days. With one click, RAG Doctor applies a single-source-of-truth patch directly to the file!
+  > In our KB Audit tab, it detected 4 exact contradictions. Clicking 'View faq.md' opens our in-browser Document Inspector to see the source text directly.
   >
-  > Even better: for our $3,000 Tavily track bonus, when RAG Doctor discovers an unwritten gap—like missing international return shipping—it triggers a live Tavily web search, retrieves FTC and e-commerce standards, and has Nemotron Super draft an enterprise-grade Markdown policy section ready to merge!"
+  > Even better: for our $3,000 Best Use of Tavily track, when RAG Doctor discovers an unwritten gap—like missing international return shipping—it triggers an autonomous Tavily web search, retrieves FTC and e-commerce standards, and has Nemotron Super draft an authoritative policy section ready to merge!"
 
 ---
 
-### [2:15 – 2:45] Auto-Tuning Engine: Before vs After & Wrap-up
-- **Visual:** Switch to the **Auto-Tuner (Before vs After)** tab. Hover over the Recharts comparison bar chart and scorecard.
+### [2:15 – 2:45] ⚡ 1-Click Auto-Heal & Auto-Tuner (Before vs After)
+- **Screen Action:** 
+  1. Click **"⚡ 1-Click Auto-Heal (100%)"**.
+  2. Watch the Health Score jump from **48% to 100%**, and watch the ECG monitor switch to **Normal Sinus Rhythm (72 BPM Optimal)**!
+  3. Switch to the **"Auto-Tuner (Before vs After)"** tab to show the Recharts comparison bar chart (+32.5% Accuracy, 100% Hit Rate, 0% Hallucinations).
 - **Narration:**
-  > "Finally, let’s look at the Auto-Tuner. By exploring chunk sizes, top-k values, and hybrid RRF weights, RAG Doctor proves measurable before-and-after improvement:
-  > - **Accuracy jumped by +32.5%** (from 62.5% to 95%)
-  > - **Retrieval Hit Rate reached 100%**
-  > - **Hallucinations dropped by 80%**
+  > "Now watch the magic: let's click '1-Click Auto-Heal'!
   >
-  > All running on open, independent infrastructure with NVIDIA Nemotron and Nebius Token Factory. The code is 100% open source under MIT. Thank you!"
+  > All 4 contradictions are harmonized, all 3 gaps are merged, the Health Score shoots to 100%, and our cardiac monitor confirms Normal Sinus Rhythm!
+  >
+  > In the Auto-Tuner tab, the before-and-after chart proves measurable impact:
+  > - Accuracy jumped from 62.5% to 95.0% (+32.5% gain)
+  > - Retrieval hit rate reached 100%
+  > - Hallucinations dropped to 0%
+  >
+  > RAG Doctor proves that open-source NVIDIA Nemotron models hosted on Nebius Token Factory can deliver production-grade, self-healing enterprise AI. The code is 100% open source under MIT. Thank you!"
