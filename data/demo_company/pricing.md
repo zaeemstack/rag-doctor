@@ -88,10 +88,3 @@ If a product is listed at an incorrect price due to a typographical error or sys
 ---
 
 *Prices and discount percentages are subject to change without notice.*
-
-
----
-
-## Policy Update (G3)
-
-Based on Nova Retail official policy, eligible items can be returned within 30 days of delivery. Standard shipping takes 3-5 business days.

@@ -5,7 +5,7 @@ import { getBenchmarkExam } from '../lib/exam.js';
 import { judgeAnswer } from '../lib/judge.js';
 import { calculateMetrics } from '../lib/metrics.js';
 import { diagnoseFailures } from '../lib/diagnose.js';
-import { auditKnowledgeBase, loadAnswerKey } from '../lib/kb_audit.js';
+import { auditKnowledgeBase, loadAnswerKey, resetCorpusToBaseline } from '../lib/kb_audit.js';
 import { searchTavily, draftPolicyPatchWithTavily } from '../lib/tavily.js';
 
 test('loadCorpus loads demo company markdown documents', () => {
@@ -107,6 +107,7 @@ test('diagnoseFailures clusters retrieval failures and generates prescription', 
 });
 
 test('auditKnowledgeBase detects known contradictions and gaps', async () => {
+  resetCorpusToBaseline();
   const audit = await auditKnowledgeBase();
   assert.ok(audit.contradictions.length >= 4, 'Should detect 4 known contradictions');
   assert.ok(audit.gaps.length >= 3, 'Should detect 3 knowledge gaps');

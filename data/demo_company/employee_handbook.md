@@ -42,11 +42,11 @@ Attendance issues must be reported to your manager before your shift starts. Rep
 
 ## 3. Leave Entitlements (Summary)
 
-All full-time staff are entitled to **15 days** of paid annual leave per year, accruing at **1.25 days per month** (aligned with Leave Policy). This summary is provided for quick reference; the definitive rules on accrual caps, carry-over, and request procedures are documented in the Leave Policy (HR portal).
+All full-time staff are entitled to **20 days** of paid annual leave per year, accruing at **1.67 days per month**. This summary is provided for quick reference; the definitive rules on accrual caps, carry-over, and request procedures are documented in the Leave Policy (HR portal).
 
 | Leave Type | Entitlement |
 |---|---|
-| Annual Leave | 15 days / year |
+| Annual Leave | 20 days / year |
 | Sick Leave | Up to 10 days / year (accrued at 1 hr / 30 hrs worked) |
 | Parental Leave (birthing) | 16 weeks at full pay |
 | Parental Leave (non-birthing) | 6 weeks at full pay |

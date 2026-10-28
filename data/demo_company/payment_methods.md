@@ -91,10 +91,3 @@ Some payment methods (particularly debit cards) may show an **authorisation hold
 **Email:** payments@novaretail.com  
 **Phone:** 1-800-NOVA-RET  
 **Hours:** Mon–Fri 08:00–20:00 ET
-
-
----
-
-## Policy Update (G2)
-
-Based on Nova Retail official policy, eligible items can be returned within 30 days of delivery. Standard shipping takes 3-5 business days.

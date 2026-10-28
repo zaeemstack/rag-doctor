@@ -23,7 +23,7 @@ A: Yes. All transactions are processed through PCI-DSS Level 1 certified payment
 ## Shipping
 
 **Q: How long does standard shipping take?**  
-A: Our return window is **30 days** from the date of delivery (aligned with Refund Policy).
+A: Our return window is **14 days** from the date of delivery.
 
 > *Wait — wrong question was pasted. See returns section below.*
 
@@ -40,7 +40,7 @@ A: Tracking updates can lag by up to 24 hours. If there is no movement for more 
 ## Returns & Refunds
 
 **Q: What is Nova Retail's return policy?**  
-A: Our return window is **30 days** from the date of delivery (aligned with Refund Policy). Items must be unused, in original packaging, and accompanied by proof of purchase.
+A: Our return window is **14 days** from the date of delivery. Items must be unused, in original packaging, and accompanied by proof of purchase.
 
 **Q: How do I start a return?**  
 A: Log in to **novaretail.com/account**, go to **Orders → Request Return**, select your item and reason, then download the prepaid return label.

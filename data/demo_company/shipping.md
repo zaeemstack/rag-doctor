@@ -119,10 +119,3 @@ Once an order is dispatched, address changes are not guaranteed. Contact support
 ---
 
 *Transit times are estimates and are not guaranteed. Nova Retail is not responsible for delays caused by weather, carrier disruptions, or customs processing.*
-
-
----
-
-## Policy Update (G1)
-
-Based on Nova Retail official policy, eligible items can be returned within 30 days of delivery. Standard shipping takes 3-5 business days.
